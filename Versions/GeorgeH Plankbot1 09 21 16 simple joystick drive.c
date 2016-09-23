@@ -20,19 +20,19 @@ task main() { //This holds the main tasks the robot initially starts with.
 	startTask(drive); //This starts the drivetask so we can actually drive the robot.
 	while(on) {
 		rightX = vexRT(Ch1);
-		if(abs(rightX)<thresh){ //This adds a deadzone in the controller's right X axis, so that drivers have more reliable control of the robot.
+		if(abs(rightX)<thresh){ //This adds a deadzone in the controller's right X axis
 			rightX = 0;
 		}
 		rightY = vexRT(Ch2);
-		if(abs(rightY)<thresh){ //This adds a deadzone in the controller's right Y axis, so that drivers have more reliable control of the robot.
+		if(abs(rightY)<thresh){ //This adds a deadzone in the controller's right Y axis
 			rightY = 0;
 		}
 		leftY = vexRT(Ch3);
-		if(abs(leftY)<thresh){ //This adds a deadzone in the controller's left Y axis, so that drivers have more reliable control of the robot.
+		if(abs(leftY)<thresh){ //This adds a deadzone in the controller's left Y axis
 			leftY = 0;
 		}
 		leftX = vexRT(Ch4);
-		if(abs(leftX)<thresh){ //This adds a deadzone in the controller's left X axis, so that drivers have more reliable control of the robot.
+		if(abs(leftX)<thresh){ //This adds a deadzone in the controller's left X axis
 			leftX = 0;
 		}
 	}
