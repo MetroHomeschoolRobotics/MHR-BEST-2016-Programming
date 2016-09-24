@@ -1,0 +1,6 @@
+Click Motor Sensors Setup
+
+set:
+
+port 2: driveL - 3 wire motor
+port 3: driveR - 3 wire motor
