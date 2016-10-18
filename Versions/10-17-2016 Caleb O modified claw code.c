@@ -37,8 +37,8 @@ task manipulator()
 
 		if(vexRT[Btn7L])
 			{
-			motor[clawL] = 127;
-			motor[clawR] = -127;
+			motor[clawL] = 50;
+			motor[clawR] = -50;
 			}
 		else if(vexRT[Btn7R])
 			{
