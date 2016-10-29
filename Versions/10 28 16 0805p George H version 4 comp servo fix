@@ -26,8 +26,8 @@ task drive()
 
 task manipulator()
 {
-	motor [clawL] = -50;
-	motor [clawR] = 50;
+	motor [clawL] = 80;
+	motor [clawR] = -80;
 	motor [seedDispense] = -127;
 
 	while(on)
@@ -35,12 +35,12 @@ task manipulator()
 		/*! arm motor*/
 		motor[arm] = -leftY;
 
-		if(vexRT[Btn7L])
+		if(vexRT[Btn7R])
 		{
 			motor[clawL] = -5;
 			motor[clawR] = 5;
 		}
-		else if(vexRT[Btn7R])
+		else if(vexRT[Btn7L])
 		{
 			motor[clawL] = 45;
 			motor[clawR] = -45;
@@ -48,8 +48,8 @@ task manipulator()
 
 		if(vexRT[Btn8R])// compliance code pos
 		{
-			motor[clawL] = -50;
-			motor[clawR] = 50;
+			motor[clawL] = 80;
+			motor[clawR] = -80;
 		}
 
 		if(vexRT[Btn7U])
