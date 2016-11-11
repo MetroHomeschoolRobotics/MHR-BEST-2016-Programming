@@ -1,15 +1,15 @@
-#pragma config(Motor, port2, driveL,        tmotorServoContinuousRotation, openLoop)
-#pragma config(Motor, port3, driveR,        tmotorServoContinuousRotation, openLoop)
-#pragma config(Motor, port4, arm,           tmotorServoContinuousRotation, openLoop)
-#pragma config(Motor, port5, clawL,         tmotorServoStandard, openLoop)
-#pragma config(Motor, port6, clawR,         tmotorServoStandard, openLoop)
-#pragma config(Motor, port7, seedDispense,  tmotorServoStandard, openLoop)
+#pragma config(Motor,  port2,           driveL,        tmotorServoContinuousRotation, openLoop)
+#pragma config(Motor,  port3,           driveR,        tmotorServoContinuousRotation, openLoop)
+#pragma config(Motor,  port4,           arm,           tmotorServoContinuousRotation, openLoop)
+#pragma config(Motor,  port5,           clawL,         tmotorServoStandard, openLoop)
+#pragma config(Motor,  port6,           clawR,         tmotorServoStandard, openLoop)
+#pragma config(Motor,  port7,           seedDispense,  tmotorServoStandard, openLoop)
 
 int leftX = 0;
 int leftY = 0;
 int rightY = 0;
 int rightX = 0;
-int thresh = 8;
+int thresh = 15;
 int slope = 1.35;
 int slope2 = 3;
 const bool on = true;
@@ -33,8 +33,8 @@ task drive()
 
 task manipulator()
 {
-	motor [clawL] = 50;
-	motor [clawR] = -80;
+	motor [clawL] = 75;
+	motor [clawR] = -75;
 	motor [seedDispense] = -127;
 
 	while(on)
@@ -42,30 +42,22 @@ task manipulator()
 		/*! arm motor*/
 		motor[arm] = -leftY;
 
-		if(vexRT[Btn7R])//close left claw
+		if(vexRT[Btn7R])
 		{
-			motor[clawL] = -60;
+			motor[clawL] = -5;
+			motor[clawR] = 5;
 		}
-		else if(vexRT[Btn7L])//open left claw
+		else if(vexRT[Btn7L])
 		{
-			motor[clawL] = 25;
-		}
-
-		if(vexRT[Btn8D])// compliance code pos
-		{
-			motor[clawL] = 50;
-			motor[clawR] = -80;
+			motor[clawL] = 45;
+			motor[clawR] = -45;
 		}
 
-		if(vexRT[Btn8L])//close right claw
+		if(vexRT[Btn8R])// compliance code pos
 		{
-			motor[clawR] = 15;
-	  }
-
-	  if(vexRT[Btn8R])//open right claw
-	  {
-			motor[clawR] = -80;
-	  }
+			motor[clawL] = 75;
+			motor[clawR] = -75;
+		}
 
 		if(vexRT[Btn7U])
 		{
