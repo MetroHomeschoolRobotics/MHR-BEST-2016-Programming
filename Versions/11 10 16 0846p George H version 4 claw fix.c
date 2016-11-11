@@ -11,6 +11,7 @@ int rightY = 0;
 int rightX = 0;
 int thresh = 8;
 int slope = 1.35;
+int slope2 = 3;
 const bool on = true;
 
 /*! L R drive*/
@@ -20,6 +21,12 @@ task drive()
 	{
 		motor[driveL] = ((-rightY - rightX)/slope)^2;
 		motor[driveR] = ((+rightY - rightX)/slope)^2;
+		
+	if (vexRT[Btn6U])
+	{
+		motor[driveL] = ((-rightY - rightX)/slope2)^2;
+		motor[driveR] = ((+rightY - rightX)/slope2)^2;		
+	}// end if
 	}
 	/*! end task drive*/
 }
