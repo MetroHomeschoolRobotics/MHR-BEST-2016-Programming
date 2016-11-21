@@ -64,7 +64,7 @@ task manipulator()
 {
 	motor [clawL] = 0;
 	motor [clawR] = 0;
-	motor [seedDispense] = -127;
+	motor [seedDispense] = 80;
 
 	while(on)
 	{
