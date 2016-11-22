@@ -43,7 +43,7 @@ task drive()
 {
 	while(on)
 	{
-		if (vexRT[Btn6U])
+		if (vexRT[Btn6D])
 		{
 			motor[driveL] = ((-rightY - rightX)/slope2)^2;
 			motor[driveR] = ((+rightY - rightX)/slope2)^2;
