@@ -64,7 +64,7 @@ task manipulator()
 {
 	motor [clawL] = 0;
 	motor [clawR] = 0;
-	motor [seedDispense] = 80;
+	motor [seedDispense] = -127;
 
 	while(on)
 	{
@@ -79,11 +79,11 @@ task manipulator()
 			motor[clawL] = 0;
 		}
 
-		if(vexRT[Btn5U])//extend the arm
+		if(vexRT[Btn5D])//extend the arm
 		{
 			motor[extender] = -127;
 	  }
-	  else if(vexRT[Btn5D])
+	  else if(vexRT[Btn5U])
 	  {
 	  	motor[extender] = 127;
 	  }
@@ -108,11 +108,11 @@ task manipulator()
 			motor[clawR] = 0;
 		}
 
-		if(vexRT[Btn7U])
+		if(vexRT[Btn7D])
 		{
 			motor[seedDispense] = 80;
 		}
-		else if (vexRT[Btn7D])
+		else if (vexRT[Btn7U])
 		{
 			motor[seedDispense] = -127;
 		}
