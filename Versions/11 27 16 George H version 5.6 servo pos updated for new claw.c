@@ -97,6 +97,12 @@ task manipulator()
 	  	motor[clawL] = -127;
 	  	motor[clawR] = 127;
 	  }
+		
+	  if(vexRT[Btn8D])//open both claws
+	  {
+	  	motor[clawL] = 127;
+	  	motor[clawR] = -127;
+	  }
 
 		if(vexRT[Btn8L])//close right claw
 		{
