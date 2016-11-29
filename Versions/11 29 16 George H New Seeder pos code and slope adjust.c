@@ -64,7 +64,7 @@ task manipulator()
 {
 	motor [clawL] = 127;
 	motor [clawR] = -127;
-	motor [seedDispense] = -95;
+	motor [seedDispense] = -90;
 
 	while(on)
 	{
@@ -110,11 +110,11 @@ task manipulator()
 
 		if(vexRT[Btn7D])
 		{
-			motor[seedDispense] = -95;
+			motor[seedDispense] = -90;
 		}
 		else if (vexRT[Btn7U])
 		{
-			motor[seedDispense] = -35;
+			motor[seedDispense] = -28;
 		}
 	}
 }
