@@ -1,4 +1,4 @@
-// mhr_best_2016_code
+// MHR-BEST-2016-Programming
 <h3>Motor - port 2 - driveL</h3>
 &nbsp;
 <h3>Motor - port 3 - driveR</h3>
